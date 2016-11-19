@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MaxProfitTest {
@@ -43,6 +44,12 @@ public class MaxProfitTest {
     @Test
     public void testMaxProfitHighLowMid() {
         assertThat(MaxProfit.maxProfit(Arrays.asList(5, 3, 1, 2, 3, 2, 3, 4, 3, 2, 1))).isEqualTo(3);
+
+        assertThat(MaxProfit.maxProfit(Arrays.asList(5, 6, 4, 7, 9, 8, 8))).isEqualTo(5);
+        assertThat(MaxProfit.maxProfit(Arrays.asList(1, 2, 3, 4, 5))).isEqualTo(4);
+        assertThat(MaxProfit.maxProfit(Arrays.asList(15, 5, 6, 4, 7, 9, 8, 8))).isEqualTo(5);
+        assertThat(MaxProfit.maxProfit(Arrays.asList(15, 5, 6, 4, 10, 7, 15, 8, 8))).isEqualTo(11);
+        assertThat(MaxProfit.maxProfit(Arrays.asList(1, 2, 3, 4, 5, 1, 9))).isEqualTo(8);
     }
 
     //@Test
@@ -53,5 +60,15 @@ public class MaxProfitTest {
     //@Test
     public void testMaxProfitOne() {
         assertThat(MaxProfit.maxProfit(Arrays.asList(1))).isEqualTo(0);
+    }
+
+    //@Test
+    public void testMaxProfitZero() {
+        assertThat(MaxProfit.maxProfit(Collections.emptyList())).isEqualTo(0);
+    }
+
+    //@Test
+    public void testMaxProfitNull() {
+        assertThat(MaxProfit.maxProfit(null)).isEqualTo(0);
     }
 }
